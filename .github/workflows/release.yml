@@ -26,6 +26,10 @@ jobs:
     - name: .NET Core SxS
       run: |
         rsync -a ${DOTNET_ROOT/3.0.101/2.1.607}/* $DOTNET_ROOT/
+    - name: List files before build
+      run: |
+          pwd 
+          ls -a
     - name: Build
       run: dotnet build --configuration Release
     - name: Test
